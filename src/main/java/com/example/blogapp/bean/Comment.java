@@ -16,7 +16,7 @@ import lombok.Setter;
 @Setter
 public class Comment {
 
-    @Id
+	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
@@ -33,5 +33,18 @@ public class Comment {
     @ManyToOne
     @JoinColumn(name = "post_id")
     private Post post;
+    public Long getId() {
+        return id;
+    }
+    // Custom setter for id (if needed)
+    public void setId(Long id) {
+        this.id = id;
+    }
+    public void setPost(Post post) {
+        this.post = post;
+    }
+
 
 }
+
+
